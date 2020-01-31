@@ -11,13 +11,15 @@ client.once('ready', () => {
 })
 
 client.on('message', message => {
-    const args = message.content.slice(prefix.length).split(' ');
+    const arg = message.content.slice(prefix.length).split(' ')[1];
 
     if (message.content.startsWith(`${prefix}real`)) {
-        NSFW.real(args[1], message);
+        console.log("LOG: Cygnus !real")
+        NSFW.real(arg, message);
     }
     else if (message.content.startsWith(`${prefix}hentai`)) {
-        NSFW.hentai(args[1], message)
+        console.log("LOG: Cygnus !hentai")
+        NSFW.hentai(arg, message)
     }
 })
 
