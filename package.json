@@ -1,0 +1,32 @@
+{
+  "name": "cygnus",
+  "version": "1.0.0",
+  "description": "Discord bot",
+  "main": "main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogofalken/cignus.git"
+  },
+  "keywords": [
+    "Discord",
+    "Cepos&Mabecos",
+    "JS"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diogofalken/cignus/issues"
+  },
+  "homepage": "https://github.com/diogofalken/cignus#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
+  }
+}
