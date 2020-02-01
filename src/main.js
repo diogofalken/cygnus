@@ -1,6 +1,11 @@
 const Discord = require('discord.js');
-const { prefix, token } = require('./config.json');
+const { prefix } = require('./config.json');
 const nsfw = require('./nsfw.js')
+const http = require('http');
+const port = 3000;
+
+// This is a simple server
+http.createServer().listen(port);
 
 const client = new Discord.Client();
 const NSFW = new nsfw();
@@ -20,9 +25,13 @@ client.on('message', message => {
         console.log("LOG: Cygnus !hentai")
         NSFW.hentai(args, message)
     }
-    else if(message.content.startsWith(`${prefix}help`)) {
+    else if (message.content.startsWith(`${prefix}help`)) {
         message.reply('**:shinto_shrine: Cygnus - Cheat Sheet**    ** :peach: NSFW commands:**    ```!real {ass,feet,thighs,random}``` ```!hentai {ass,feet,thighs,feet}```')
     }
 })
 
-client.login(token);
+client.on('error', err => {
+    console.log(err)
+});
+
+client.login(process.env.token);
