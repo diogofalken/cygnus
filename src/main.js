@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-
 const { prefix, token } = require('./config.json');
 const nsfw = require('./nsfw.js')
 
@@ -11,15 +10,18 @@ client.once('ready', () => {
 })
 
 client.on('message', message => {
-    const arg = message.content.slice(prefix.length).split(' ')[1];
+    const args = message.content.slice(prefix.length).split(' ')[1];
 
     if (message.content.startsWith(`${prefix}real`)) {
         console.log("LOG: Cygnus !real")
-        NSFW.real(arg, message);
+        NSFW.real(args, message);
     }
     else if (message.content.startsWith(`${prefix}hentai`)) {
         console.log("LOG: Cygnus !hentai")
-        NSFW.hentai(arg, message)
+        NSFW.hentai(args, message)
+    }
+    else if(message.content.startsWith(`${prefix}help`)) {
+        message.reply('**:shinto_shrine: Cygnus - Cheat Sheet**    ** :peach: NSFW commands:**    ```!real {ass,feet,thighs,random}``` ```!hentai {ass,feet,thighs,feet}```')
     }
 })
 
