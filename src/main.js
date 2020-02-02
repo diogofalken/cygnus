@@ -33,7 +33,7 @@ bot.on('message', message => {
   } else if (message.content.startsWith(`${prefix}help`)) {
     console.log(`${utils.getTimestamp()} - Cygnus !help`);
     message.reply(
-      '**:shinto_shrine: Cygnus - Cheat Sheet**    ** :peach: NSFW commands:**    ```!real {ass,feet,thighs,random}``` ```!hentai {ass,feet,thighs,feet}```'
+      '**:shinto_shrine: Cygnus - Cheat Sheet**    ** :peach: NSFW commands:**    ```!real {ass,panties,thighs,random}``` ```!hentai {ass,feet,thighs,feet}```'
     );
   }
 });
