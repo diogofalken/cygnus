@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/diogofalken/cignus#readme",
   "dependencies": {
+    "csv-parser": "^2.3.2",
     "dabi-images": "^2.7.5",
     "discord.js": "^11.5.1"
   },

@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const { prefix, nswfChannel } = require('./config.json');
 const Nsfw = require('./nsfw.js');
 const Utils = require('./utils.js');
+const Ementa = require('./ementa.js');
+
 const http = require('http');
 const port = 3000;
 
@@ -11,6 +13,7 @@ http.createServer().listen(port);
 const bot = new Discord.Client();
 const nsfw = new Nsfw();
 const utils = new Utils();
+const ementa = new Ementa();
 
 bot.once('ready', () => {
   console.log(`${utils.getTimestamp()} - Cygnus ready to go`);
@@ -18,6 +21,11 @@ bot.once('ready', () => {
 
 bot.on('message', message => {
   const args = message.content.slice(prefix.length).split(' ')[1];
+
+  if(message.content.startsWith(`${prefix}ementa`)) {
+    console.log(`${utils.getTimestamp()} - Cygnus !ementa`);
+    ementa.getEmenta(message);
+  }
 
   if (message.channel.name != nswfChannel) {
     console.log(`${utils.getTimestamp()} - Wrong chat don't listen`);
