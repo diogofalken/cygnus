@@ -25,6 +25,7 @@ bot.on('message', message => {
   if(message.content.startsWith(`${prefix}ementa`)) {
     console.log(`${utils.getTimestamp()} - Cygnus !ementa`);
     ementa.getEmenta(message);
+    return;
   }
 
   if (message.channel.name != nswfChannel) {
